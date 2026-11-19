@@ -1,0 +1,1 @@
+const a=Object.freeze([Object.freeze([3,0,4,1,2]),Object.freeze([4,3,1,2,0]),Object.freeze([1,4,2,0,3])]),c=Object.freeze([3,2,1,1,0]),f=e=>a.findIndex(r=>Array.isArray(e)&&e.length===r.length&&r.every((t,n)=>e[n]===t));function s(e){const r=Math.max(0,f(e)),t=[...a[r]];return{index:r,order:t,turns:t.map(n=>c[n])}}export{a as F,f,s as r};

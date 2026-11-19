@@ -1,0 +1,5 @@
+function o(r,a){const t=a==="soil",n="varying vec3 vArtP;varying float vArtLayer;";return r.customProgramCacheKey=()=>a,r.onBeforeCompile=e=>{e.vertexShader=n+(t?"attribute float artLayer;":"")+`
+`+e.vertexShader,e.vertexShader=e.vertexShader.replace("#include <begin_vertex>",`#include <begin_vertex>
+vArtP=transformed;`+(t?"vArtLayer=artLayer;":"vArtLayer=normal.y;")),e.fragmentShader=n+`
+`+e.fragmentShader,e.fragmentShader=e.fragmentShader.replace("#include <color_fragment>",`#include <color_fragment>
+`+(t?"if(vArtLayer<.999){float t=vArtLayer+.018*sin((vArtP.x+vArtP.z)*2.4);diffuseColor.rgb=mix(mix(vec3(.42,.45,.40),vec3(.50,.32,.13),step(.32,t)),vec3(.32,.16,.07),step(.72,t));}":"if(vArtP.y>15.995&&vArtLayer>.999){vec2 p=vArtP.xz,f=fract(p/1.2);float seam=smoothstep(.025,.045,min(f.x,f.y)),tone=.94+.06*fract(sin(dot(floor(p/1.2),vec2(12.9,78.2)))*43758.),station=min(length(p-vec2(-3.,14.)),length(p-vec2(3.,2.))),path=abs(p.x+p.y*.5-4.)/1.118,edge=min(10.-abs(p.x),min(20.-p.y,p.y+4.)),zone=station<2.8?.65:path<.85&&p.y>2.&&p.y<14.?1.12:edge<.65?.76:1.;if(p.y<-4.)zone=abs(p.x)>2.35?.72:1.04;diffuseColor.rgb*=mix(.78,1.,seam)*tone*zone;}"))},r}export{o as a};

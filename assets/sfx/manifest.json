@@ -1,0 +1,194 @@
+{
+  "ui-tap": {
+    "file": "./assets/sfx/ui-tap.mp3",
+    "loop": false,
+    "duration": 0.12,
+    "frequency": 560
+  },
+  "panel-open": {
+    "file": "./assets/sfx/panel-open.mp3",
+    "loop": false,
+    "duration": 0.24,
+    "frequency": 440
+  },
+  "panel-close": {
+    "file": "./assets/sfx/panel-close.mp3",
+    "loop": false,
+    "duration": 0.2,
+    "frequency": 330
+  },
+  "map-select": {
+    "file": "./assets/sfx/map-select.mp3",
+    "loop": false,
+    "duration": 0.28,
+    "frequency": 587
+  },
+  "complete": {
+    "file": "./assets/sfx/complete.mp3",
+    "loop": false,
+    "duration": 0.45,
+    "frequency": 784
+  },
+  "star": {
+    "file": "./assets/sfx/star.mp3",
+    "loop": false,
+    "duration": 0.65,
+    "frequency": 1046
+  },
+  "interact": {
+    "file": "./assets/sfx/interact.mp3",
+    "loop": false,
+    "duration": 0.2,
+    "frequency": 440
+  },
+  "pickup": {
+    "file": "./assets/sfx/pickup.mp3",
+    "loop": false,
+    "duration": 0.36,
+    "frequency": 660
+  },
+  "piece": {
+    "file": "./assets/sfx/piece.mp3",
+    "loop": false,
+    "duration": 0.22,
+    "frequency": 350
+  },
+  "correct": {
+    "file": "./assets/sfx/correct.mp3",
+    "loop": false,
+    "duration": 0.55,
+    "frequency": 523
+  },
+  "wrong": {
+    "file": "./assets/sfx/wrong.mp3",
+    "loop": false,
+    "duration": 0.32,
+    "frequency": 180
+  },
+  "gate": {
+    "file": "./assets/sfx/gate.mp3",
+    "loop": false,
+    "duration": 0.8,
+    "frequency": 110
+  },
+  "lamp": {
+    "file": "./assets/sfx/lamp.mp3",
+    "loop": false,
+    "duration": 0.5,
+    "frequency": 880
+  },
+  "bell": {
+    "file": "./assets/sfx/bell.mp3",
+    "loop": false,
+    "duration": 1.5,
+    "frequency": 392
+  },
+  "voice": {
+    "file": "./assets/sfx/voice.mp3",
+    "loop": false,
+    "duration": 0.16,
+    "frequency": 220
+  },
+  "step-stone": {
+    "file": "./assets/sfx/step-stone.mp3",
+    "loop": false,
+    "duration": 0.16,
+    "frequency": 210
+  },
+  "step-wood": {
+    "file": "./assets/sfx/step-wood.mp3",
+    "loop": false,
+    "duration": 0.18,
+    "frequency": 145
+  },
+  "step-sand": {
+    "file": "./assets/sfx/step-sand.mp3",
+    "loop": false,
+    "duration": 0.22,
+    "frequency": 80
+  },
+  "step-grass": {
+    "file": "./assets/sfx/step-grass.mp3",
+    "loop": false,
+    "duration": 0.2,
+    "frequency": 120
+  },
+  "step-water": {
+    "file": "./assets/sfx/step-water.mp3",
+    "loop": false,
+    "duration": 0.24,
+    "frequency": 330
+  },
+  "boat-creak": {
+    "file": "./assets/sfx/boat-creak.mp3",
+    "loop": false,
+    "duration": 0.6,
+    "frequency": 105
+  },
+  "water-lap": {
+    "file": "./assets/sfx/water-lap.mp3",
+    "loop": false,
+    "duration": 0.7,
+    "frequency": 260
+  },
+  "skiff-wind": {
+    "file": "./assets/sfx/skiff-wind.mp3",
+    "loop": false,
+    "duration": 0.7,
+    "frequency": 110
+  },
+  "sub-ping": {
+    "file": "./assets/sfx/sub-ping.mp3",
+    "loop": false,
+    "duration": 0.8,
+    "frequency": 880
+  },
+  "bubbles": {
+    "file": "./assets/sfx/bubbles.mp3",
+    "loop": false,
+    "duration": 0.65,
+    "frequency": 450
+  },
+  "coast": {
+    "file": "./assets/sfx/coast.mp3",
+    "loop": true,
+    "duration": 8,
+    "frequency": null
+  },
+  "harbour": {
+    "file": "./assets/sfx/harbour.mp3",
+    "loop": true,
+    "duration": 8,
+    "frequency": null
+  },
+  "wind-grass": {
+    "file": "./assets/sfx/wind-grass.mp3",
+    "loop": true,
+    "duration": 8,
+    "frequency": null
+  },
+  "cave": {
+    "file": "./assets/sfx/cave.mp3",
+    "loop": true,
+    "duration": 8,
+    "frequency": null
+  },
+  "underwater": {
+    "file": "./assets/sfx/underwater.mp3",
+    "loop": true,
+    "duration": 8,
+    "frequency": null
+  },
+  "forest": {
+    "file": "./assets/sfx/forest.mp3",
+    "loop": true,
+    "duration": 8,
+    "frequency": null
+  },
+  "hearth": {
+    "file": "./assets/sfx/hearth.mp3",
+    "loop": true,
+    "duration": 8,
+    "frequency": null
+  }
+}

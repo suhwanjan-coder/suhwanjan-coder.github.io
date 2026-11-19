@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+    <meta name="theme-color" content="#173f42" />
+    <meta name="description" content="踏上星潮群島，尋回散落在潮光祕境的三枚月火。" />
+    <title>星潮群島｜潮光祕境</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230d3839'/%3E%3Ccircle cx='31' cy='32' r='21' fill='%23f4d88e'/%3E%3Ccircle cx='41' cy='24' r='19' fill='%230d3839'/%3E%3C/svg%3E" />
+    <script type="module" crossorigin src="/assets/showcase-C-Yp02mb.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-B5Qt9EMX.js">
+    <link rel="modulepreload" crossorigin href="/assets/preload-helper-BXl3LOEh.js">
+    <link rel="modulepreload" crossorigin href="/assets/three-vendor-CUw5pl0O.js">
+    <link rel="modulepreload" crossorigin href="/assets/campaignParts-DhrmF0UF.js">
+    <link rel="modulepreload" crossorigin href="/assets/wardrobe-rlVWCugf.js">
+    <link rel="modulepreload" crossorigin href="/assets/playtestAccess-ClOBZW85.js">
+    <link rel="modulepreload" crossorigin href="/assets/rewards-7HeyOpB6.js">
+    <link rel="stylesheet" crossorigin href="/assets/showcase-R36fFTJ1.css">
+  </head>
+  <body>
+    <main id="showcase" aria-label="星潮群島可遊玩展示">
+      <div id="scene" aria-hidden="true"></div>
+      <div class="sky-wash" aria-hidden="true"></div>
+
+      <div id="loading" class="loading" role="status" aria-live="polite">
+        <span class="loading-mark"></span>
+        <span id="loading-copy">潮汐正在甦醒</span>
+      </div>
+
+      <section id="opening" class="opening" aria-labelledby="opening-title">
+        <div class="opening-copy">
+          <p class="eyebrow">STAR TIDE · 可遊玩序章</p>
+          <h1 id="opening-title">潮光祕境</h1>
+          <p class="opening-lead">一場暴風把燈塔的月火吹散；潮林、望臺與小潮靈各留住了一縷。隨心漫遊，把它們帶回海邊的燈塔。島上也有可自由參與的選玩事件。</p>
+          <p id="opening-expedition-label" class="opening-expedition-label">本次路線 · 海風巡禮　星砂 0／3</p>
+          <button id="start-button" class="primary-button" type="button" disabled>
+            <span>出發探索</span><span aria-hidden="true">→</span>
+          </button>
+          <p class="opening-controls"><b>WASD／方向鍵</b> 移動　<b>Shift</b> 奔跑　<b>Space</b> 跳躍　<b>E</b> 呼應</p>
+        </div>
+        <p class="opening-note">拖曳視角 · 滾輪遠近 · 隨心漫遊</p>
+      </section>
+
+      <header id="topbar" class="topbar game-ui is-hidden">
+        <div class="identity">
+          <p>STAR TIDE</p>
+          <h2>星潮群島</h2>
+          <span id="expedition-label">潮光祕境</span>
+        </div>
+        <div class="utility">
+          <p class="explore-count"><span id="discovery-count">0</span><small>／5 處發現</small></p>
+          <p id="expedition-count" class="expedition-count">海風巡禮 · 星砂 0／3</p>
+          <button id="help-button" class="icon-button" type="button" aria-label="操作說明">?</button>
+          <button id="pause-button" class="icon-button" type="button" aria-label="暫停旅程">Ⅱ</button>
+          <button id="audio-button" class="icon-button" type="button" aria-label="關閉音樂與音效" aria-pressed="false">♪</button>
+          <label class="volume-control" title="音樂與音效音量"><span>音量</span><input id="volume-control" type="range" min="0" max="100" value="70" aria-label="音樂與音效音量" /></label>
+          <button id="quality-button" class="quality-button" type="button" aria-label="切換畫質" aria-pressed="false">精緻</button>
+          <button id="journal-button" class="journal-button" type="button" aria-label="開啟冒險手札（J）">手札</button>
+          <button id="wardrobe-button" class="wardrobe-button" type="button" aria-label="旅人衣櫥">衣櫥</button>
+        </div>
+      </header>
+
+      <aside id="mission" class="mission game-ui is-hidden" aria-live="polite">
+        <p id="mission-title">月火歸航</p>
+        <div class="spark-row" aria-label="已尋回月火">
+          <i data-spark="grove"></i><i data-spark="lookout"></i><i data-spark="thief"></i>
+        </div>
+        <span id="mission-objective"><b id="spark-count">0</b><span id="mission-objective-copy">／3　尋回月火，喚醒新月燈塔</span></span>
+        <small id="mission-hint" class="mission-hint"></small>
+        <small id="encounter-hud" class="encounter-hud"></small>
+      </aside>
+
+      <div id="caption" class="caption" role="status" aria-live="polite">
+        <span id="caption-kicker"></span>
+        <strong id="caption-title"></strong>
+        <p id="caption-body"></p>
+      </div>
+
+      <div id="interaction" class="interaction game-ui is-hidden" aria-live="polite">
+        <kbd>E</kbd><span id="interaction-copy">與潮光呼應</span>
+      </div>
+
+      <button id="mobile-pulse" class="touch-action game-ui is-hidden" type="button" aria-label="呼應">
+        <span>✦</span><small>呼應</small>
+      </button>
+      <button id="mobile-jump" class="touch-action jump game-ui is-hidden" type="button" aria-label="跳躍">
+        <span>↑</span><small>跳躍</small>
+      </button>
+      <div id="joystick" class="joystick game-ui is-hidden" aria-hidden="true"><div id="joystick-knob"></div></div>
+
+      <section id="help-panel" class="panel is-hidden" role="dialog" aria-modal="true" aria-labelledby="help-title">
+        <button class="panel-close" data-close-panel type="button" aria-label="關閉">×</button>
+        <p class="eyebrow">旅人手冊</p>
+        <h2 id="help-title">循著光走，也可以繞遠路。</h2>
+        <dl>
+          <div><dt>移動</dt><dd id="help-move">WASD／方向鍵 · 左側觸控圓盤</dd></div>
+          <div><dt>視角</dt><dd id="help-view">拖曳畫面 · 滾輪縮放 · 右半畫面滑動</dd></div>
+          <div><dt>行動</dt><dd id="help-action">Shift 奔跑 · Space 跳躍 · E 呼應</dd></div>
+        </dl>
+        <p>守潮者出手前會先亮起警示。月火的脈衝能讓它安靜片刻；你也能沿著地形避開巡路。</p>
+      </section>
+
+      <section id="adventure-panel" class="panel adventure-panel is-hidden" role="dialog" aria-modal="true" aria-labelledby="adventure-title" aria-describedby="adventure-objective">
+        <button id="adventure-close" class="panel-close" type="button" aria-label="關閉冒險手札">×</button>
+        <p class="eyebrow">冒險手札</p>
+        <h2 id="adventure-title">冒險手札</h2>
+        <p id="adventure-objective" class="adventure-objective"></p>
+        <p id="adventure-hint" class="adventure-hint"></p>
+        <h3>本次路線</h3>
+        <p id="expedition-description" class="expedition-description"></p>
+        <ul id="expedition-trail" class="expedition-trail" aria-label="星砂路徑">
+          <li data-expedition-stop><span>○</span><strong></strong><small></small></li>
+          <li data-expedition-stop><span>○</span><strong></strong><small></small></li>
+          <li data-expedition-stop><span>○</span><strong></strong><small></small></li>
+        </ul>
+        <p id="expedition-keepsake" class="expedition-keepsake" role="status"></p>
+        <section class="encounter-section" aria-labelledby="encounter-title">
+          <h3 id="encounter-title">選玩事件</h3>
+          <p id="encounter-objective" class="encounter-objective"></p>
+          <p id="encounter-hint" class="encounter-hint"></p>
+          <p id="encounter-progress" class="encounter-progress" role="status"></p>
+          <p id="encounter-keepsake" class="encounter-keepsake"></p>
+        </section>
+        <h3>尋光清單</h3>
+        <ul class="adventure-checklist">
+          <li data-check="grove"><span>○</span><strong></strong><small></small></li>
+          <li data-check="lookout"><span>○</span><strong></strong><small></small></li>
+          <li data-check="thief"><span>○</span><strong></strong><small></small></li>
+          <li data-check="lighthouse"><span>○</span><strong></strong><small></small></li>
+        </ul>
+        <p id="adventure-creature-hint" class="adventure-creature-hint"></p>
+        <h3>潮汐回聲（選讀）</h3>
+        <ul class="memory-list">
+          <li data-memory="beach"><strong></strong><small></small><p class="is-hidden"></p></li>
+          <li data-memory="ruins"><strong></strong><small></small><p class="is-hidden"></p></li>
+          <li data-memory="lighthouse"><strong></strong><small></small><p class="is-hidden"></p></li>
+        </ul>
+      </section>
+
+      <section id="pause-panel" class="panel pause-panel is-hidden" role="dialog" aria-modal="true" aria-labelledby="pause-title">
+        <p class="eyebrow">旅途稍歇</p>
+        <h2 id="pause-title">潮聲仍在等你</h2>
+        <button id="resume-button" class="primary-button" type="button">繼續探索</button>
+        <button id="pause-restart-button" class="text-button" type="button">再出發（換路線）</button>
+        <p><a id="return-campaign" class="text-button" href="/">返回星潮旅程</a></p>
+      </section>
+
+      <section id="wardrobe-panel" class="panel wardrobe-panel is-hidden" role="dialog" aria-modal="true" aria-labelledby="wardrobe-title">
+        <button id="wardrobe-close" class="panel-close" type="button" aria-label="關閉衣櫥">×</button>
+        <p class="eyebrow">旅人衣櫥</p>
+        <h2 id="wardrobe-title">換一種冒險的模樣</h2>
+        <p id="wardrobe-profile" class="wardrobe-profile"></p>
+        <div class="avatar-choices" role="group" aria-label="主角造型">
+          <button type="button" data-avatar-style="voyager" aria-pressed="true"><span aria-hidden="true">☾</span><strong>月潮旅人</strong><small>短圍巾 · 隨身月燈</small></button>
+          <button type="button" data-avatar-style="scout" aria-pressed="false"><span aria-hidden="true">⌁</span><strong>雲海斥候</strong><small>護目鏡 · 輕便短斗篷</small></button>
+          <button type="button" data-avatar-style="scholar" aria-pressed="false"><span aria-hidden="true">✦</span><strong>星燈學者</strong><small>圓眼鏡 · 書包與肩燈</small></button>
+        </div>
+        <p class="wardrobe-color-label">衣料顏色</p>
+        <div class="avatar-colors" role="group" aria-label="衣料顏色">
+          <button type="button" data-avatar-color="teal" style="--swatch:#218e91" aria-label="潮青" aria-pressed="true"></button>
+          <button type="button" data-avatar-color="violet" style="--swatch:#9465bb" aria-label="星紫" aria-pressed="false"></button>
+          <button type="button" data-avatar-color="coral" style="--swatch:#d87967" aria-label="珊瑚" aria-pressed="false"></button>
+          <button type="button" data-avatar-color="gold" style="--swatch:#d8b04d" aria-label="暖金" aria-pressed="false"></button>
+          <button type="button" data-avatar-color="forest" style="--swatch:#4c916b" aria-label="森綠" aria-pressed="false"></button>
+          <button type="button" data-avatar-color="midnight" style="--swatch:#475581" aria-label="夜藍" aria-pressed="false"></button>
+        </div>
+        <p id="reward-balance" class="reward-balance" aria-live="polite"></p>
+        <div class="reward-cards" role="group" aria-label="潮光獎勵衣料">
+          <button type="button" class="reward-card" data-reward-color="pearl" data-reward-label="月白金" aria-pressed="false">
+            <span class="reward-swatch pearl" aria-hidden="true"></span><strong>月白金</strong><small data-reward-status>40 點兌換</small>
+          </button>
+          <button type="button" class="reward-card" data-reward-color="aurora" data-reward-label="極光青" aria-pressed="false">
+            <span class="reward-swatch aurora" aria-hidden="true"></span><strong>極光青</strong><small data-reward-status>80 點兌換</small>
+          </button>
+        </div>
+        <p id="wardrobe-notice" class="wardrobe-notice" role="status"></p>
+        <button id="wardrobe-apply" class="primary-button" type="button">套用造型 <span aria-hidden="true">→</span></button>
+      </section>
+
+      <section id="complete-panel" class="complete-panel is-hidden" role="dialog" aria-modal="true" aria-labelledby="complete-title">
+        <p class="eyebrow">BEACON RESTORED</p>
+        <h2 id="complete-title">燈塔記起了星光</h2>
+        <p id="complete-body">三枚月火點亮燈塔。遠方的潮線亮了起來，而島嶼仍有小徑等你經過。</p>
+        <p id="complete-detail" class="complete-detail"></p>
+        <p id="complete-reward" class="complete-reward" role="status"></p>
+        <div>
+          <button id="continue-button" class="primary-button" type="button">繼續漫遊</button>
+          <button id="restart-button" class="text-button" type="button">再出發（換路線）</button>
+        </div>
+      </section>
+
+      <div id="fatal" class="fatal is-hidden" role="alert">
+        <p class="eyebrow">潮汐暫時沉睡</p>
+        <h1>無法開啟潮光祕境</h1>
+        <p id="fatal-copy">請確認瀏覽器已啟用 WebGL，重新整理後再試一次。</p>
+        <button type="button" onclick="location.reload()">重新整理</button>
+      </div>
+
+      <noscript><p class="noscript">需要啟用 JavaScript 才能踏上星潮群島。</p></noscript>
+    </main>
+  </body>
+</html>

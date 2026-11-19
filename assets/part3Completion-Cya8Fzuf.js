@@ -1,0 +1,1 @@
+import{s as o,e as s}from"./campaignParts-DhrmF0UF.js";const i=e=>s(e,"part3-complete");function a(e,t){m(e,t)||e.setItem(i(t),JSON.stringify({version:1,completed:!0}))}function m(e,t){return o(e,t,"part3-complete",["spring-tide-night"]).some(r=>r.completed===!0)}export{m as i,a as m};

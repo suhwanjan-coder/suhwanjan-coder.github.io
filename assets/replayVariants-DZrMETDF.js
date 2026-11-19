@@ -1,0 +1,1 @@
+function a(e){return Number.isSafeInteger(e?.replays)&&e.replays>=0?e.replays:0}function s(e,l){let t=null;try{t=JSON.parse(localStorage.getItem(e)||"null")}catch{}const r=t?.replay?.replayVariant,n=Number.isInteger(r)&&r>=0&&r<l.length?r:0;return{index:n,answer:[...l[n]]}}export{s as l,a as r};
